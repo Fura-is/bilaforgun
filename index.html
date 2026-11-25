@@ -28,6 +28,151 @@
 <script src="site.js?v=15" defer></script>
 <script src="effects.js?v=15" defer></script>
 <script src="analytics.js?v=15" defer></script>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebSite",
+      "@id": "https://bilaforgun.is/#website",
+      "url": "https://bilaforgun.is/",
+      "name": "Bílaförgun.is",
+      "inLanguage": [
+        "is",
+        "en",
+        "pl"
+      ],
+      "publisher": {
+        "@id": "https://fura.is/#organization"
+      }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "https://bilaforgun.is/#webpage",
+      "url": "https://bilaforgun.is/",
+      "name": "Bílaförgun | 40.000 kr. fyrir bílinn",
+      "description": "Bílaförgun og afskráning ökutækja hjá Furu í Hafnarfirði og á Akureyri, í aðeins þremur skrefum. Ríkisféhirðir greiðir 30.000 kr. fyrir hvern bíl sem fer í förgun og Fura bætir 10.000 kr. við til áramóta.",
+      "inLanguage": "is",
+      "isPartOf": {
+        "@id": "https://bilaforgun.is/#website"
+      },
+      "about": {
+        "@id": "https://bilaforgun.is/#service"
+      },
+      "primaryImageOfPage": "https://bilaforgun.is/assets/hero.jpg"
+    },
+    {
+      "@type": "Service",
+      "@id": "https://bilaforgun.is/#service",
+      "name": "Bílaförgun",
+      "serviceType": "Car scrapping and vehicle deregistration",
+      "description": "Bílaförgun og afskráning ökutækja hjá Furu í Hafnarfirði og á Akureyri, í aðeins þremur skrefum. Ríkisféhirðir greiðir 30.000 kr. fyrir hvern bíl sem fer í förgun og Fura bætir 10.000 kr. við til áramóta.",
+      "url": "https://fura.is/bilaforgun",
+      "provider": {
+        "@id": "https://fura.is/#organization"
+      },
+      "areaServed": {
+        "@type": "Country",
+        "name": "Iceland"
+      },
+      "availableChannel": [
+        {
+          "@type": "ServiceChannel",
+          "serviceLocation": {
+            "@id": "https://fura.is/#hafnarfjordur"
+          }
+        },
+        {
+          "@type": "ServiceChannel",
+          "serviceLocation": {
+            "@id": "https://fura.is/#akureyri"
+          }
+        }
+      ]
+    },
+    {
+      "@type": "Organization",
+      "@id": "https://fura.is/#organization",
+      "name": "Fura Málmendurvinnsla",
+      "alternateName": "Fura ehf.",
+      "url": "https://fura.is/",
+      "logo": "https://fura.is/fura-logo.svg",
+      "foundingDate": "1981",
+      "sameAs": [
+        "https://www.instagram.com/fura.ehf/"
+      ]
+    },
+    {
+      "@type": "RecyclingCenter",
+      "@id": "https://fura.is/#hafnarfjordur",
+      "name": "Fura Málmendurvinnsla — Hafnarfjörður",
+      "telephone": "+354-565-3557",
+      "email": "fura@fura.is",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Hringhellu 3",
+        "postalCode": "221",
+        "addressLocality": "Hafnarfjörður",
+        "addressCountry": "IS"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "20:00"
+        },
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": "Saturday",
+          "opens": "08:00",
+          "closes": "14:00"
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://fura.is/#organization"
+      }
+    },
+    {
+      "@type": "RecyclingCenter",
+      "@id": "https://fura.is/#akureyri",
+      "name": "Fura Málmendurvinnsla — Akureyri",
+      "telephone": "+354-894-4238",
+      "email": "gunnar@fura.is",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Óseyri 3",
+        "postalCode": "600",
+        "addressLocality": "Akureyri",
+        "addressCountry": "IS"
+      },
+      "openingHoursSpecification": [
+        {
+          "@type": "OpeningHoursSpecification",
+          "dayOfWeek": [
+            "Monday",
+            "Tuesday",
+            "Wednesday",
+            "Thursday",
+            "Friday"
+          ],
+          "opens": "08:00",
+          "closes": "17:00"
+        }
+      ],
+      "parentOrganization": {
+        "@id": "https://fura.is/#organization"
+      }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 
