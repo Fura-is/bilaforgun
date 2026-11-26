@@ -23,7 +23,7 @@
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link href="https://fonts.googleapis.com/css2?family=Big+Shoulders+Stencil:opsz,wght@10..72,800&family=Barlow+Condensed:wght@700&family=Onest:wght@100..900&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="styles.css?v=20">
+<link rel="stylesheet" href="styles.css?v=21">
 <script>document.documentElement.classList.add('js')</script>
 <script src="site.js?v=19" defer></script>
 <script src="effects.js?v=19" defer></script>
@@ -169,6 +169,65 @@
       "parentOrganization": {
         "@id": "https://fura.is/#organization"
       }
+    },
+    {
+      "@type": "FAQPage",
+      "@id": "https://bilaforgun.is/#faq",
+      "url": "https://bilaforgun.is/",
+      "inLanguage": "is",
+      "isPartOf": {
+        "@id": "https://bilaforgun.is/#webpage"
+      },
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "Hvað geri ég við ónýtan bíl?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Þú getur fargað honum hjá Furu. Bíllinn er endurunninn á faglegan hátt og þú færð 40.000 kr. fyrir hann."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvar get ég hent bílnum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Hjá Furu á Hringhellu 3 í Hafnarfirði og á Óseyri 3 á Akureyri."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Fæ ég pening fyrir gamla bílinn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Já. Ríkisféhirðir greiðir 30.000 kr. fyrir hvern bíl sem fer í förgun og Fura bætir 10.000 kr. við til áramóta."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Getur Fura sótt bílinn?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Já, Fura kemur bílnum til sín þér að kostnaðarlausu innan stór-höfuðborgarsvæðisins. Hringdu í 565 3557 eða sendu póst á afgreidsla@fura.is."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Tekur Fura við rafmagns- og hybrid bílum?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Aðeins ef búið er að fjarlægja rafhlöðuna úr bílnum."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Hvernig byrja ég?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Fylgdu einföldu skrefunum á fura.is/bilaforgun."
+          }
+        }
+      ]
     }
   ]
 }
@@ -213,6 +272,17 @@
             <span class="plate-btn__text">Fylgdu þessum 3 skrefum<svg class="plate-btn__arrow" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 12h15M13 5l7 7-7 7"/></svg></span>
           </span>
         </a>
+      </div>
+      <div class="faq reveal">
+        <h2 class="faq__title">Algengar spurningar</h2>
+        <div class="faq__list">
+          <details open><summary>Hvað geri ég við ónýtan bíl?</summary><p>Þú getur fargað honum hjá Furu. Bíllinn er endurunninn á faglegan hátt og þú færð 40.000 kr. fyrir hann.</p></details>
+          <details><summary>Hvar get ég hent bílnum?</summary><p>Hjá Furu á Hringhellu 3 í Hafnarfirði og á Óseyri 3 á Akureyri.</p></details>
+          <details><summary>Fæ ég pening fyrir gamla bílinn?</summary><p>Já. Ríkisféhirðir greiðir 30.000 kr. fyrir hvern bíl sem fer í förgun og Fura bætir 10.000 kr. við til áramóta.</p></details>
+          <details><summary>Getur Fura sótt bílinn?</summary><p>Já, Fura kemur bílnum til sín þér að kostnaðarlausu innan stór-höfuðborgarsvæðisins. Hringdu í <a href="tel:+3545653557">565 3557</a> eða sendu póst á <a href="mailto:afgreidsla@fura.is">afgreidsla@fura.is</a>.</p></details>
+          <details><summary>Tekur Fura við rafmagns- og hybrid bílum?</summary><p>Aðeins ef búið er að fjarlægja rafhlöðuna úr bílnum.</p></details>
+          <details><summary>Hvernig byrja ég?</summary><p>Fylgdu einföldu skrefunum á <a href="https://fura.is/bilaforgun">fura.is/bilaforgun</a>.</p></details>
+        </div>
       </div>
     </div>
   </section>
