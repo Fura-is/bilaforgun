@@ -1,12 +1,14 @@
-/* Google Analytics (same property as fura.is), loaded only after the visitor accepts cookies. */
+/* Google Analytics and Meta Pixel (the same ones as fura.is), loaded only after the visitor accepts cookies. */
 (function () {
   var GA_ID = 'G-PBCK2DB9V4';
-  var KEY = 'bilaforgun-cookie-consent';
+  var META_PIXEL_ID = '1812480936617040';
+  /* v2: the banner now also covers advertising, so everyone is asked again. */
+  var KEY = 'bilaforgun-cookie-consent-v2';
 
   var TEXT = {
-    is: { msg: 'Við notum valfrjálsar vafrakökur til að mæla umferð um síðuna. Þú getur samþykkt eða hafnað þeim.', ok: 'Samþykkja', no: 'Hafna', label: 'Vafrakökustillingar' },
-    en: { msg: 'We use optional cookies to measure traffic on this site. You can accept or decline them.', ok: 'Accept', no: 'Decline', label: 'Cookie settings' },
-    pl: { msg: 'Używamy opcjonalnych plików cookie do pomiaru ruchu na stronie. Możesz je zaakceptować lub odrzucić.', ok: 'Akceptuję', no: 'Odrzuć', label: 'Ustawienia plików cookie' }
+    is: { msg: 'Við notum valfrjálsar vafrakökur til að mæla umferð og birta viðeigandi auglýsingar. Þú getur samþykkt eða hafnað þeim.', ok: 'Samþykkja', no: 'Hafna', label: 'Vafrakökustillingar' },
+    en: { msg: 'We use optional cookies to measure traffic and show more relevant advertising. You can accept or decline them.', ok: 'Accept', no: 'Decline', label: 'Cookie settings' },
+    pl: { msg: 'Używamy opcjonalnych plików cookie do pomiaru ruchu i wyświetlania trafniejszych reklam. Możesz je zaakceptować lub odrzucić.', ok: 'Akceptuję', no: 'Odrzuć', label: 'Ustawienia plików cookie' }
   };
 
   function loadGA() {
@@ -22,9 +24,40 @@
     window.gtag('config', GA_ID, { linker: { domains: ['fura.is'] } });
   }
 
+  function loadMetaPixel() {
+    if (window.__bfPixel) return;
+    window.__bfPixel = true;
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return;
+      n = f.fbq = function () {
+        n.callMethod ? n.callMethod.apply(n, arguments) : n.queue.push(arguments);
+      };
+      if (!f._fbq) f._fbq = n;
+      n.push = n;
+      n.loaded = true;
+      n.version = '2.0';
+      n.queue = [];
+      t = b.createElement(e);
+      t.async = true;
+      t.src = v;
+      s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s);
+    }(window, document, 'script', 'https://connect.facebook.net/en_US/fbevents.js');
+    window.fbq('init', META_PIXEL_ID);
+    window.fbq('track', 'PageView');
+  }
+
+  function loadTracking() {
+    loadGA();
+    loadMetaPixel();
+  }
+
+  /* The plate button that leads on to fura.is. */
   document.addEventListener('click', function (e) {
     var btn = e.target.closest && e.target.closest('.plate-btn');
-    if (btn && window.gtag) window.gtag('event', 'farga_bilnum_click', { link_url: btn.href, transport_type: 'beacon' });
+    if (!btn) return;
+    if (window.gtag) window.gtag('event', 'farga_bilnum_click', { link_url: btn.href, transport_type: 'beacon' });
+    if (window.fbq) window.fbq('trackCustom', 'FargaBilnumClick', { link_url: btn.href });
   });
 
   function readChoice() {
@@ -74,7 +107,7 @@
 
     function close() { if (bar.parentNode) bar.parentNode.removeChild(bar); }
     no.addEventListener('click', function () { saveChoice('denied'); close(); });
-    ok.addEventListener('click', function () { saveChoice('granted'); loadGA(); close(); });
+    ok.addEventListener('click', function () { saveChoice('granted'); loadTracking(); close(); });
 
     btns.appendChild(no);
     btns.appendChild(ok);
@@ -85,7 +118,7 @@
 
   function start() {
     var choice = readChoice();
-    if (choice === 'granted') loadGA();
+    if (choice === 'granted') loadTracking();
     else if (choice !== 'denied') showBanner();
   }
 
