@@ -1,0 +1,12 @@
+# Images are renamed or given a new ?v= whenever they change, so browsers may keep them.
+/assets/*
+  Cache-Control: public, max-age=31536000, immutable
+
+/styles.css
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/site.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/effects.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/analytics.js
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
