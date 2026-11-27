@@ -63,7 +63,7 @@ a { color: inherit; text-decoration: none; }
   position: relative;
   display: block;
   flex: none;
-  height: calc(30px * var(--k));
+  height: calc(34px * var(--k));
   aspect-ratio: 640 / 275;
   background: linear-gradient(180deg, #fff 0%, #e4e6ea 38%, #9ba1aa 52%, #c9ccd2 70%, #f4f5f7 100%);
   -webkit-mask: url("assets/fura-logo-white.png") center / contain no-repeat;
@@ -512,7 +512,7 @@ a { color: inherit; text-decoration: none; }
 @media (max-width: 734px) {
   :root { --nav-h: 56px; }
   .nav__lang { gap: 14px; }
-  .nav__fura { height: 24px; }
+  .nav__fura { height: 27px; }
   .nav__lang .full { display: none; }
   .nav__lang .short { display: inline; }
   .hero__brand { font-size: 15.5vw; }
